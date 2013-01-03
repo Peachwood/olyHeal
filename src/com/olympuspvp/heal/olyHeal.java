@@ -20,7 +20,8 @@ public class olyHeal extends JavaPlugin{
 			return true;
 		}if(args.length == 0){
 			p.setHealth(20);
-			p.sendMessage(tag + "You have been healed.");
+			p.setFoodLevel(20);
+			p.sendMessage(tag + "You have been healed and fed.");
 			p.playSound(p.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 		}else if(args.length == 1){
 			final String name = args[0];
@@ -28,8 +29,9 @@ public class olyHeal extends JavaPlugin{
 			if(heal == null) p.sendMessage(tag + "Could not find player.");
 			else{
 				heal.sendMessage(tag + "You were healed by " + ChatColor.DARK_GREEN + p.getName());
-				p.sendMessage(tag + "You healed" + ChatColor.DARK_GREEN + heal.getName());
+				p.sendMessage(tag + "You healed " + ChatColor.DARK_GREEN + heal.getName());
 				heal.setHealth(20);
+				heal.setFoodLevel(20);
 				heal.playSound(heal.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 			}
 		}
