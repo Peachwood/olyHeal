@@ -1,0 +1,9 @@
+name: olyHeal
+main: com.olympuspvp.heal.olyHeal
+version: 1.0
+author: willno123
+description: Admin heals
+
+commands:
+    heal:
+        description: Heals a player
